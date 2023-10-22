@@ -4,7 +4,7 @@ import pandas as pd
 import pickle
 
 # Load your data
-with open('recommendation_data_65130701918.pkl', 'rb') as file:
+with open('./recommendation_data_65130701918.pkl', 'rb') as file:
     user_similarity_df, user_movie_ratings = pickle.load(file)
 
 
