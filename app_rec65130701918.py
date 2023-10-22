@@ -4,7 +4,7 @@ import pandas as pd
 import pickle
 
 # Load your data
-with open('./recommendation_data_65130701918.pkl', 'rb') as file:
+with open('recommendation_data_65130701918.pkl', 'rb') as file:
     user_similarity_df, user_movie_ratings = pickle.load(file)
 
 
@@ -18,10 +18,10 @@ def main():
 
     # Generate recommendations on button click
     if st.button("Get Recommendations"):
-        if user_id in user_similarity_df.index: 
+        if user_id in user_similarity_df.index:
             recommendations = get_movie_recommendations(user_id, user_similarity_df, user_movie_ratings, n_recommendations)
             st.write(f"Top {n_recommendations} Movie Recommendations for User {user_id}:", recommendations)
-        else: 
+        else:
             st.write(f" Movie Recommendations for User {user_id}: is not available.")
 
 if __name__ == '__main__':
